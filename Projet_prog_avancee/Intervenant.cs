@@ -10,21 +10,17 @@ namespace Projet_prog_avancee
     {
         protected string _nom { get; set; }
         protected string _prenom { get; set; }
+        protected string _typeIntervenant { get; set; }
         protected string _role { get; set; }
-        protected int _promo { get; set; }
-        protected string _anneeScolaire { get; set; }
-        protected List<string> _listeMatieres;
 
 
         //Constructeur
-        public Intervenant(string nom, string prenom, string role, int promo, string anneeScolaire)
+        public Intervenant(string nom, string prenom, string role, string typeIntervenant)
         {
             _nom = nom;
             _prenom = prenom;
             _role = role;
-            _promo = promo;
-            _anneeScolaire = anneeScolaire;
-            _listeMatieres = new List<string>();
+            _typeIntervenant = typeIntervenant;
         }
 
     }

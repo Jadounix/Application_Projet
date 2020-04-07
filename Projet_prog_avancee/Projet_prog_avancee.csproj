@@ -44,9 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Intervenant.cs" />
+    <Compile Include="MotCle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Projet.cs" />
-    <Compile Include="Promotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Simulation.cs" />
   </ItemGroup>
