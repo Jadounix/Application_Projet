@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace Projet_prog_avancee
 {
-    class Simulation
+    class Professeur : Intervenant
     {
-        protected List<Projet> _listeProjets;
+        private string _matiere;
 
         //Constructeur
-        public Simulation()
+        public Professeur(string matiere, string nom, string prenom, string role) : base(nom, prenom, role)
         {
-            _listeProjets = new List<Projet>();
+            _matiere = matiere;
         }
-
-
     }
 }

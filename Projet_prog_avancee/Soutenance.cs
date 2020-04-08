@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace Projet_prog_avancee
 {
-    class Simulation
+    class Soutenance : Livrable
     {
-        protected List<Projet> _listeProjets;
+        private int _duree;
 
         //Constructeur
-        public Simulation()
+        public Soutenance(string dateRendu, int duree) : base(dateRendu)
         {
-            _listeProjets = new List<Projet>();
+            _duree = duree;
         }
-
-
     }
 }

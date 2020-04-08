@@ -14,7 +14,7 @@ namespace Projet_prog_avancee
         protected int _duree { get; set; }
         protected int _annee { get; set; }
         protected List<string> _listeMatieres;
-        protected List<string> _listeLivrables;
+        protected List<Livrable> _listeLivrables;
         protected List<MotCle> _listeMotsCles;
         protected List<Intervenant> _listeIntervenants;
 
@@ -27,7 +27,7 @@ namespace Projet_prog_avancee
             _duree = duree;
             _annee = annee;
             _listeMatieres = new List<string>();
-            _listeLivrables = new List<string>();
+            _listeLivrables = new List<Livrable>();
             _listeMotsCles = new List<MotCle>();
             _listeIntervenants = new List<Intervenant>();
         }

@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace Projet_prog_avancee
 {
-    class Simulation
+    class Exte : Intervenant
     {
-        protected List<Projet> _listeProjets;
+        private string _entreprise;
 
         //Constructeur
-        public Simulation()
+        public Exte(string entreprise, string nom, string prenom, string role) : base(nom, prenom, role)
         {
-            _listeProjets = new List<Projet>();
+            _entreprise = entreprise;
         }
-
-
     }
 }
