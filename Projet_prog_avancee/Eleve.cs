@@ -15,5 +15,24 @@ namespace Projet_prog_avancee
         {
             _promotion = promotion;
         }
+
+        public void RechercheParEleve()
+        {
+            Console.WriteLine("Vous avez choisi le mode de consultation : Recherche par élève.");
+            Console.WriteLine("Quel est le nom de l'élève a rechercher ?");
+            string nomCherche = Console.ReadLine();
+            foreach(Eleve k in liste)
+            {
+                if (nomCherche == k._nom)
+                {
+                    //
+                }
+                else
+                {
+                    Console.WriteLine("Il n'existe pas de projet correspondant à votre recherche.");
+                }
+
+            }
+        }
     }
 }
