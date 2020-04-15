@@ -17,5 +17,12 @@ namespace Projet_prog_avancee
             _lien = lien;
             _langageUtilise = langageUtilise;
         }
+
+        //Méthode ToString
+        public override string ToString()
+        {
+            string chS = "**SITE WEB**\nDate de rendu : " + _dateRendu + " | Langage utilisé : " + _langageUtilise + "\n";
+            return chS;
+        }
     }
 }

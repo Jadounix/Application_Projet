@@ -15,5 +15,12 @@ namespace Projet_prog_avancee
         {
             _duree = duree;
         }
+
+        //Méthode ToString
+        public override string ToString()
+        {
+            string chS = "**SOUTENANCE**\nDate de rendu : " + _dateRendu + " | Durée de la soutenance : " + _duree + "\n";
+            return chS;
+        }
     }
 }

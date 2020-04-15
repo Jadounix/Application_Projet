@@ -20,6 +20,13 @@ namespace Projet_prog_avancee
             _role = role;
         }
 
+        //Méthode ToString
+        public override string ToString()
+        {
+            string chS = "Nom : " + _nom + " | Prénom : " + _prenom + " | Rôle : " + _role + "\n";
+            return chS;
+        }
+
         public void RechercheParIntervenant()
         {
             Console.WriteLine("Quel est le type d'intervenant recherché ?");

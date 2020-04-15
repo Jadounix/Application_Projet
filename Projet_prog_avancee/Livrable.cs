@@ -15,5 +15,12 @@ namespace Projet_prog_avancee
         {
             _dateRendu = dateRendu;
         }
+
+        //Méthode ToString
+        public override string ToString()
+        {
+            string chS = "Date de rendu : " + _dateRendu + "\n";
+            return chS;
+        }
     }
 }

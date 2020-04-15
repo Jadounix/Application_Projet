@@ -15,5 +15,12 @@ namespace Projet_prog_avancee
         {
             _entreprise = entreprise;
         }
+
+        //Méthode ToString
+        public override string ToString()
+        {
+            string chS = "Nom : " + _nom + " | Prénom : " + _prenom + " | Rôle : " + _role + " | Entreprise : " + _entreprise + "\n";
+            return chS;
+        }
     }
 }

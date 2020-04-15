@@ -15,5 +15,12 @@ namespace Projet_prog_avancee
         {
             _nbPages = nbPages;
         }
+
+        //Méthode ToString
+        public override string ToString()
+        {
+            string chS = "**RAPPORT**\nDate de rendu : " + _dateRendu + " | Nombre de pages : " + _nbPages + "\n";
+            return chS;
+        }
     }
 }

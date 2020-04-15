@@ -15,5 +15,14 @@ namespace Projet_prog_avancee
         {
             _matiere = matiere;
         }
+
+        //Méthode ToString
+        public override string ToString()
+        {
+            string chS = "Nom : " + _nom + " | Prénom : " + _prenom + " | Rôle : " + _role + " | Matière : " + _matiere + "\n";
+            return chS;
+        }
+
+
     }
 }
