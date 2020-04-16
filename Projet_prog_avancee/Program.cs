@@ -15,6 +15,7 @@ namespace Projet_prog_avancee
 
             Simulation S = new Simulation(2, 5);
             S.CreationProjet();
+            S.Recherche();
     
             Console.ReadLine();
         }

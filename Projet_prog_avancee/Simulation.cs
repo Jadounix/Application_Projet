@@ -51,6 +51,8 @@ namespace Projet_prog_avancee
         public void Recherche()
         {
             bool continuer = true;
+            bool choix = false;
+
             while(continuer == true)
             {
                 Console.WriteLine("Bienvenue dans votre outil de recherche de projets \nQuel mode de consultation voulez-vous utiliser ?");
@@ -62,13 +64,18 @@ namespace Projet_prog_avancee
                     {
                         //RechercheModei()
                         Console.WriteLine("Recherche en fonction du mode");
+                        choix = true;
                     }
                     else
                     {
-                        Console.WriteLine("Veuillez entrer un nombre entre 1 et " + _nbModeConsultation + " pour commencer votre recherche.");
+                        choix = false;
                     }
                 }
-                Console.WriteLine("Tapez 1 pour effectuer une nouvelle recherche.");
+                if (choix == false)
+                {
+                    Console.WriteLine("Veuillez entrer un nombre entre 1 et " + _nbModeConsultation + " pour commencer votre recherche.");
+                }
+                Console.WriteLine("Tapez 1 pour effectuer une nouvelle recherche, un autre chiffre pour quitter l'application.");
                 int reponse = int.Parse(Console.ReadLine());
                 if(reponse == 1)
                 {
