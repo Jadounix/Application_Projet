@@ -13,7 +13,7 @@ namespace Projet_prog_avancee
             Console.WriteLine("C'est parti !");
             //Projet P = new Projet(10, 20, 2002, "Bloup", "Transdi");
 
-            Simulation S = new Simulation(2, 5);
+            Simulation S = new Simulation(6);
             S.CreationProjet();
             S.Recherche();
     

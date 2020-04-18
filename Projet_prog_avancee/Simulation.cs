@@ -8,15 +8,13 @@ namespace Projet_prog_avancee
 {
     class Simulation
     {
-        private int _nbModeConsultation;
         private int _nbProjets;
         private List<Projet> _listeProjets;
         public static Random alea = new Random();
 
         //Constructeur
-        public Simulation(int nbModeConsultation, int nbProjets)
+        public Simulation(int nbProjets)
         {
-            _nbModeConsultation = nbModeConsultation;
             _nbProjets = nbProjets;
             _listeProjets = new List<Projet>();
         }
@@ -48,33 +46,90 @@ namespace Projet_prog_avancee
             }
         }
 
+        //Fonction qui va gérer l'ajout de projet dans l'application
+        public void AjoutProjet() //Faire les try et catch
+        {
+            Console.WriteLine("--- Bienvenue dans votre outil d'ajout de projet ---");
+
+            Console.WriteLine("Veuillez entrer le nombre d'intervenants du projet");
+            int nbIntervenants = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Veuillez entrer le nombre de jours du projet");
+            int nbJours = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Veuillez entrer l'année du projet");
+            int annee = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Veuillez entrer le nom du projet");
+            string nomProjet = Console.ReadLine();
+
+            Console.WriteLine("Veuillez entrer le type du projet");
+            string typeProjet = Console.ReadLine();
+
+            this._listeProjets.Add(new Projet(nbIntervenants, nbJours, annee, nomProjet, typeProjet));
+
+            Console.WriteLine("Votre projet a bien été enregistré !");
+
+        }
+
+        //Fonction qui va gérer la recherche de projet dans l'application
         public void Recherche()
         {
             bool continuer = true;
-            bool choix = false;
 
             while(continuer == true)
             {
-                Console.WriteLine("Bienvenue dans votre outil de recherche de projets \nQuel mode de consultation voulez-vous utiliser ?");
+                Console.WriteLine("--- Bienvenue dans votre outil de recherche de projets --- \nQuel mode de consultation voulez-vous utiliser ?");
                 Console.WriteLine("1 : Mots clés\n2 : Nom\n3 : Type\n4 : Année\n5 : Niveau\n6 : Intervenant\n7 : Promotion");
-                int modeChoisi = int.Parse(Console.ReadLine());
-                for (int i = 1; i <= _nbModeConsultation; i++)
+
+                int modeChoisi = 0;
+
+                bool continuerDemander = true;
+                while (continuerDemander)
                 {
-                    if (modeChoisi == i)
+                    try
                     {
-                        //RechercheModei()
-                        Console.WriteLine("Recherche en fonction du mode");
-                        choix = true;
+                        modeChoisi = int.Parse(Console.ReadLine());
+                        if(modeChoisi>=1 && modeChoisi<7) //7 correspond au nombre de modes de consultations
+                        {
+                            continuerDemander = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Veuillez entrer un nombre entre 1 et 7 pour commencer votre recherche.");
+                        }
                     }
-                    else
+                    catch (Exception e)
                     {
-                        choix = false;
+                        Console.WriteLine("Veuillez entrer un nombre entre 1 et 7 pour commencer votre recherche.");
                     }
                 }
-                if (choix == false)
+
+                switch(modeChoisi)
                 {
-                    Console.WriteLine("Veuillez entrer un nombre entre 1 et " + _nbModeConsultation + " pour commencer votre recherche.");
+                    case 1:
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Mots clés");
+                        break;
+                    case 2:
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Nom");
+                        break;
+                    case 3:
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Type");
+                        break;
+                    case 4:
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Année");
+                        break;
+                    case 5:
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Niveau");
+                        break;
+                    case 6:
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Intervenant");
+                        break;
+                    case 7:
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Promotion");
+                        break;
                 }
+
                 Console.WriteLine("Tapez 1 pour effectuer une nouvelle recherche, un autre chiffre pour quitter l'application.");
                 int reponse = int.Parse(Console.ReadLine());
                 if(reponse == 1)
@@ -87,6 +142,44 @@ namespace Projet_prog_avancee
                 }
             }
             Console.WriteLine("Merci, à bientôt ! ");   
+        }
+
+        public void LancementApplication()
+        {
+            Console.WriteLine("Bienvenue dans votre outil de gestion de projet ?\nQue voulez vous faire ?");
+            Console.WriteLine("1 : Rechercher un projet\n2 : Ajouter un projet");
+
+            int choix = 0;
+
+            bool continuerDemander = true;
+            while (continuerDemander)
+            {
+                try
+                {
+                    choix = int.Parse(Console.ReadLine());
+                    if (choix == 1 || choix == 2)
+                    { 
+                        continuerDemander = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Veuillez entrer 1 pour chercher un projet, 2 pour ajouter un projet.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Veuillez entrer 1 pour chercher un projet, 2 pour ajouter un projet.");
+                }
+            }
+
+            if(choix==1)
+            {
+                Recherche();
+            }
+            else
+            {
+                AjoutProjet();
+            }
         }
 
     }
