@@ -105,28 +105,28 @@ namespace Projet_prog_avancee
                     }
                 }
 
-                switch(modeChoisi)
+                switch(modeChoisi) //Point d'avancement le 3 mai <3
                 {
                     case 1:
                         Console.WriteLine("Vous avez choisi le mode de consultation : Mots clés");
                         break;
                     case 2:
-                        Console.WriteLine("Vous avez choisi le mode de consultation : Nom");
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Nom"); //Fannie
                         break;
                     case 3:
-                        Console.WriteLine("Vous avez choisi le mode de consultation : Type");
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Type"); //Jade
                         break;
                     case 4:
-                        Console.WriteLine("Vous avez choisi le mode de consultation : Année");
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Année"); //Fannie
                         break;
                     case 5:
-                        Console.WriteLine("Vous avez choisi le mode de consultation : Niveau");
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Niveau"); //Fannie
                         break;
                     case 6:
-                        Console.WriteLine("Vous avez choisi le mode de consultation : Intervenant");
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Intervenant"); //Jade
                         break;
                     case 7:
-                        Console.WriteLine("Vous avez choisi le mode de consultation : Promotion");
+                        Console.WriteLine("Vous avez choisi le mode de consultation : Promotion"); //Jade
                         break;
                 }
 
