@@ -93,6 +93,8 @@ namespace Projet_prog_avancee
                         Console.WriteLine("Quelle promotion voulez-vous rechercher ?");
                         int promoChoisi = int.Parse(Console.ReadLine()); //à sécuriser
 
+                        List<Projet> projetAafficher = new List<Projet>();
+
                         if (promoChoisi < 2009 || promoChoisi > 2022)
                         {
                             while (promoChoisi < 2009 || promoChoisi > 2022)
@@ -107,18 +109,27 @@ namespace Projet_prog_avancee
                             Console.WriteLine("Projet(s) correspondant(s) à votre recherche :");
                             foreach (Projet P in _listeProjets)
                             {
-                                foreach (Intervenant I in P._listeIntervenants) //Problème si deux fois la même promo dans 1 projet
+                                foreach (Intervenant I in P._listeIntervenants)
                                 {
                                     if (I is Eleve)
                                     {
                                         Eleve E = (Eleve)I; //On change la classe de l'intervenant I -> il devient un élève sinon on n'a pas accès à sa promo
                                         if (promoChoisi == E._promotion)
                                         {
-                                            Console.WriteLine(P);
+                                            if (projetAafficher.Contains(P) == false) //On veut éviter les doublons de projets si deux élèves font parti de la même promotion : on regarde si le projet n'est pas déjà dans la liste
+                                            {
+                                               projetAafficher.Add(P);
+                                            }
                                         }
                                     }
                                 }
                             }
+                        }
+
+                        //Affichage des projets correspondants aux promotions
+                        foreach (Projet P in projetAafficher)
+                        {
+                            Console.WriteLine(P);
                         }
                         break;
                 }

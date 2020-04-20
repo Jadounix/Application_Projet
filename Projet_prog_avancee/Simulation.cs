@@ -42,10 +42,10 @@ namespace Projet_prog_avancee
                 noTypeProjet = alea.Next(_typeProjets.Count);
             }
 
-            foreach(Projet p in _listeProjets)
+            /*foreach(Projet p in _listeProjets)
             {
                 Console.WriteLine(p.ToString());
-            }
+            }*/
         }
 
         public void LancementApplication()
@@ -84,7 +84,7 @@ namespace Projet_prog_avancee
                 RechercheProjet R = new RechercheProjet(_nbProjets);
                 R.Recherche();
             }
-            else
+            else //Forcément 2 car on a déjà vérifié au préalable que le chiffre était soit 1 soit 2
             {
                 AjoutProjet A = new AjoutProjet(_nbProjets);
                 A.AjouterProjet();
