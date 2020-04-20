@@ -8,7 +8,7 @@ namespace Projet_prog_avancee
 {
     class Eleve : Intervenant
     {
-        private int _promotion;
+        public int _promotion;
 
         //Constructeur
         public Eleve(int promotion, string nom, string prenom, string role) : base(nom, prenom, role)

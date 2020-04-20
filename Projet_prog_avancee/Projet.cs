@@ -8,15 +8,15 @@ namespace Projet_prog_avancee
 {
     class Projet
     {
-        protected int _nbIntervenants { get; set; }
-        protected string _nom { get; set; }
-        protected string _typeProjet { get; set; }
-        protected int _dureeJours { get; set; }
-        protected int _annee { get; set; }
-        protected List<string> _listeMatieres;
-        protected List<Livrable> _listeLivrables;
-        protected List<MotCle> _listeMotsCles;
-        protected List<Intervenant> _listeIntervenants;
+        public int _nbIntervenants { get; set; }
+        public string _nom { get; set; }
+        public string _typeProjet { get; set; }
+        public int _dureeJours { get; set; }
+        public int _annee { get; set; }
+        public List<string> _listeMatieres;
+        public List<Livrable> _listeLivrables;
+        public List<MotCle> _listeMotsCles;
+        public List<Intervenant> _listeIntervenants;
         public static Random alea = new Random();
 
 

@@ -10,12 +10,8 @@ namespace Projet_prog_avancee
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("C'est parti !");
-            //Projet P = new Projet(10, 20, 2002, "Bloup", "Transdi");
-
-            Simulation S = new Simulation(6);
-            S.CreationProjet();
-            S.Recherche();
+            Simulation S = new Simulation(2);
+            S.LancementApplication();
     
             Console.ReadLine();
         }

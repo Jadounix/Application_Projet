@@ -8,9 +8,9 @@ namespace Projet_prog_avancee
 {
     abstract class Intervenant
     {
-        protected string _nom { get; set; }
-        protected string _prenom { get; set; }
-        protected string _role { get; set; }
+        public string _nom { get; set; }
+        public string _prenom { get; set; }
+        public string _role { get; set; }
 
         //Constructeur
         public Intervenant(string nom, string prenom, string role)

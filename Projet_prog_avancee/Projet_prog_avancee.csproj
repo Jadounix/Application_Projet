@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjoutProjet.cs" />
     <Compile Include="Eleve.cs" />
     <Compile Include="Exte.cs" />
     <Compile Include="Intervenant.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Projet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rapport.cs" />
+    <Compile Include="RechercheProjet.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="SiteWeb.cs" />
     <Compile Include="Soutenance.cs" />
