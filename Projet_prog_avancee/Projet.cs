@@ -86,6 +86,18 @@ namespace Projet_prog_avancee
             int nbProf = alea.Next(1, (_nbIntervenants - nbEleves) - 1);
             int nbExte = alea.Next(0, nbProf);
 
+
+            //Choix aléatoire du prénom de l'intervenant parmi quelques propositions
+            List<string> prenomIntervenants = new List<string> { "Michel", "Camille", "Claude", "Dominique", "Ash", "Maxence", "Willow" };
+            //On choisit avec un nombre aléatoire un nom dans la liste
+            int noPrenomIntervenants = alea.Next(prenomIntervenants.Count);
+
+            //Choix aléatoire du nom de l'intervenant parmi quelques propositions
+            List<string> nomIntervenants = new List<string> { "Dupont", "Durant", "Rabii", "Henry", "Horcia", "Roche", "Rouge" };
+            //On choisit avec un nombre aléatoire un nom dans la liste
+            int noNomIntervenants = alea.Next(nomIntervenants.Count);
+
+
             //Permet de choisir une matière aléatoirement dans la liste des matières
             int noMatiere = alea.Next(_listeMatieres.Count);
 
@@ -93,18 +105,24 @@ namespace Projet_prog_avancee
 
             for (int i = 0; i < nbEleves; i++)
             {
-                _listeIntervenants.Add(new Eleve(2022, "Lothaire", "Fannie", "chef de projet"));
+                _listeIntervenants.Add(new Eleve(2022, nomIntervenants[noNomIntervenants], prenomIntervenants[noPrenomIntervenants], "chef de projet"));
+                noNomIntervenants = alea.Next(nomIntervenants.Count);
+                noPrenomIntervenants = alea.Next(prenomIntervenants.Count);
             }
 
             for (int i = 0; i < nbProf; i++)
             {
-                _listeIntervenants.Add(new Professeur(_listeMatieres[noMatiere], "Damich", "Paulette", "Tuteur"));
+                _listeIntervenants.Add(new Professeur(_listeMatieres[noMatiere], nomIntervenants[noNomIntervenants], prenomIntervenants[noPrenomIntervenants], "Tuteur"));
                 noMatiere = alea.Next(_listeMatieres.Count);
+                noNomIntervenants = alea.Next(nomIntervenants.Count);
+                noPrenomIntervenants = alea.Next(prenomIntervenants.Count);
             }
 
             for (int i = 0; i < nbExte; i++)
             {
-                _listeIntervenants.Add(new Exte("Thalès", "Blendue", "Elisa", "Client"));
+                _listeIntervenants.Add(new Exte("Thalès", nomIntervenants[noNomIntervenants], prenomIntervenants[noPrenomIntervenants], "Client"));
+                noNomIntervenants = alea.Next(nomIntervenants.Count);
+                noPrenomIntervenants = alea.Next(prenomIntervenants.Count);
             }
         }
     }

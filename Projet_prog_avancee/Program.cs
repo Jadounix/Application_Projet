@@ -10,7 +10,7 @@ namespace Projet_prog_avancee
     {
         static void Main(string[] args)
         {
-            Simulation S = new Simulation(2);
+            Simulation S = new Simulation(1);
             S.LancementApplication();
     
             Console.ReadLine();

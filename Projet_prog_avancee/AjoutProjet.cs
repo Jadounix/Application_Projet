@@ -9,7 +9,7 @@ namespace Projet_prog_avancee
     class AjoutProjet : Simulation
     {
         //Constructeur
-        public AjoutProjet(int nbProjets) : base(nbProjets) { }
+        public AjoutProjet(int nbProjets, List<Projet> listeProjets) : base(nbProjets, listeProjets) { }
 
         //Fonction qui va gérer l'ajout de projet dans l'application
         public void AjouterProjet() //Faire les try et catch
@@ -35,6 +35,5 @@ namespace Projet_prog_avancee
 
             Console.WriteLine("Votre projet a bien été enregistré !");
         }
-
     }
 }
