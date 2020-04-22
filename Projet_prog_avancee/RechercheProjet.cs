@@ -44,16 +44,35 @@ namespace Projet_prog_avancee
             {
                 case 1:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Mots clés");
+                    bool trouve1 = false; //Booleen qui vaut true si un projet correspondant à la recherche a été trouvé, false sinon
+
+
+                    //Dans le cas où il n'y a pas de projets correspondants on affiche ce message
+                    if (trouve1 == false)
+                    {
+                        Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
+                    }
                     break;
 
                 case 2:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Nom"); //Fannie
+
+                    bool trouve2 = false; //Booleen qui vaut true si un projet correspondant à la recherche a été trouvé, false sinon
+
+
+                    //Dans le cas où il n'y a pas de projets correspondants on affiche ce message
+                    if (trouve2 == false)
+                    {
+                        Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
+                    }
                     break;
 
                 case 3:
-                    Console.WriteLine("Vous avez choisi le mode de consultation : Type"); //Jade
-
+                    Console.WriteLine("Vous avez choisi le mode de consultation : Type"); //Jade -> Fini
                     Console.WriteLine("Quel type de projet voulez-vous rechercher ?");
+
+                    bool trouve3 = false; 
+
                     int i = 1;
                     foreach (string t in _typeProjets)
                     {
@@ -68,25 +87,74 @@ namespace Projet_prog_avancee
                         if (P._typeProjet == _typeProjets[typeChoisi - 1])
                         {
                             Console.WriteLine(P);
+                            trouve3 = true;
                         }
+                    }
+
+                    if (trouve3 == false)
+                    {
+                        Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
                     }
                     break;
 
                 case 4:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Année"); //Fannie
+
+                    bool trouve4 = false; //Booleen qui vaut true si un projet correspondant à la recherche a été trouvé, false sinon
+
+
+                    //Dans le cas où il n'y a pas de projets correspondants on affiche ce message
+                    if (trouve4 == false)
+                    {
+                        Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
+                    }
                     break;
 
                 case 5:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Niveau"); //Fannie
+                    bool trouve5 = false; //Booleen qui vaut true si un projet correspondant à la recherche a été trouvé, false sinon
+
+
+                    //Dans le cas où il n'y a pas de projets correspondants on affiche ce message
+                    if (trouve5 == false)
+                    {
+                        Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
+                    }
                     break;
 
                 case 6:
-                    Console.WriteLine("Vous avez choisi le mode de consultation : Intervenant"); //Jade
+                    Console.WriteLine("Vous avez choisi le mode de consultation : Intervenant"); //Jade -> Fini
+                    Console.WriteLine("Quel est le nom de l'intervenant à rechercher ?");
+                    string nomDemande = Console.ReadLine();
+
+                    bool trouve6 = false;
+
+                    foreach (Projet P in _listeProjets) //On parcourt tous les projets
+                    {
+                        for (int k = 0; k < P._listeIntervenants.Count; k++) //Et on cherche tous les intervenants par projet
+                        {
+                            //Si le nom ou le prenom de la personne correspond au nom demandé on affiche l'intervenant
+                            if(nomDemande== P._listeIntervenants[k]._nom || nomDemande== P._listeIntervenants[k]._prenom)
+                            {
+                                Console.WriteLine(P._listeIntervenants[k].ToString());
+                                trouve6 = true;
+                            }
+                        }
+                    }
+
+                    if(trouve6==false)
+                    {
+                        Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
+                    }
+
                     break;
 
                 case 7:
-                    Console.WriteLine("Vous avez choisi le mode de consultation : Promotion"); //Jade
+                    Console.WriteLine("Vous avez choisi le mode de consultation : Promotion"); //Jade -> ne fonctionne pas
                     Console.WriteLine("Quelle promotion voulez-vous rechercher ?");
+
+                    bool trouve7 = false;
+
                     int promoChoisi = int.Parse(Console.ReadLine()); //à sécuriser
 
                     List<Projet> projetAafficher = new List<Projet>();
@@ -115,6 +183,7 @@ namespace Projet_prog_avancee
                                         if (projetAafficher.Contains(P) == false) //On veut éviter les doublons de projets si deux élèves font parti de la même promotion : on regarde si le projet n'est pas déjà dans la liste
                                         {
                                             projetAafficher.Add(P);
+                                            trouve7 = true;
                                         }
                                     }
                                 }
@@ -127,6 +196,12 @@ namespace Projet_prog_avancee
                     {
                         Console.WriteLine(P);
                     }
+
+                    if (trouve7 == false)
+                    {
+                        Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
+                    }
+
                     break;
             }
         }
