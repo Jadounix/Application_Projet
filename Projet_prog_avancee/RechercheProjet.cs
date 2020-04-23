@@ -53,12 +53,12 @@ namespace Projet_prog_avancee
                     {
                         for (int j = 0; j < P._listeMotsCles.Count; j++) //Et on cherche tous les mots clés par projet
                         {
-                            //Ne convient pas car c'est une classe. Mais pour l'instant elle est vide, à voir si on la garde
-                            /*if (motCherche == P._listeMotsCles[j])
+                            
+                            if (motCherche == P._listeMotsCles[j].ToLower())
                             {
-                                Console.WriteLine(P._listeMotsCles[j].ToString());
+                                Console.WriteLine(P._listeMotsCles[j]);
                                 trouve1 = true;
-                            }*/
+                            }
                         }
                     }
 

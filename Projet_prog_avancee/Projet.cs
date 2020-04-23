@@ -15,7 +15,7 @@ namespace Projet_prog_avancee
         public int _annee { get; set; }
         public List<string> _listeMatieres;
         public List<Livrable> _listeLivrables;
-        public List<MotCle> _listeMotsCles;
+        public List<string> _listeMotsCles;
         public List<Intervenant> _listeIntervenants;
         public static Random alea = new Random();
 
@@ -28,7 +28,7 @@ namespace Projet_prog_avancee
             _typeProjet = typeProjet;
             _dureeJours = dureeJours;
             _annee = annee;
-            _listeMotsCles = new List<MotCle>();
+            _listeMotsCles = new List<string>(); //Faire une fonction de création de mot clé
             _listeMatieres = new List<string> { "Maths", "Informatique", "Anglais", "Psychologie", "UX Design"};
             _listeLivrables = new List<Livrable>(); CreationLivrables();
             _listeIntervenants = new List<Intervenant>(); CreationIntervenants();
@@ -52,9 +52,9 @@ namespace Projet_prog_avancee
             }
 
             chS += "Les mots clé projet : \n";
-            foreach(MotCle m in _listeMotsCles)
+            foreach(string m in _listeMotsCles)
             {
-                chS += m.ToString();
+                chS += m;
             }
             return chS;
         }

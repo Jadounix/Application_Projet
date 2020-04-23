@@ -48,7 +48,6 @@
     <Compile Include="Exte.cs" />
     <Compile Include="Intervenant.cs" />
     <Compile Include="Livrable.cs" />
-    <Compile Include="MotCle.cs" />
     <Compile Include="Professeur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Projet.cs" />
