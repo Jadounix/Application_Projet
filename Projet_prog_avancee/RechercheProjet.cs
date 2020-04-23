@@ -46,6 +46,21 @@ namespace Projet_prog_avancee
                     Console.WriteLine("Vous avez choisi le mode de consultation : Mots clés");
                     bool trouve1 = false; //Booleen qui vaut true si un projet correspondant à la recherche a été trouvé, false sinon
 
+                    Console.WriteLine("Quel mot clé voulez-vous recherchez ?");
+                    string motCherche = Console.ReadLine().ToLower(); //On place directemment le mot en minuscule
+
+                    foreach (Projet P in _listeProjets) //On parcourt tous les projets
+                    {
+                        for (int j = 0; j < P._listeMotsCles.Count; j++) //Et on cherche tous les mots clés par projet
+                        {
+                            //Ne convient pas car c'est une classe. Mais pour l'instant elle est vide, à voir si on la garde
+                            /*if (motCherche == P._listeMotsCles[j])
+                            {
+                                Console.WriteLine(P._listeMotsCles[j].ToString());
+                                trouve1 = true;
+                            }*/
+                        }
+                    }
 
                     //Dans le cas où il n'y a pas de projets correspondants on affiche ce message
                     if (trouve1 == false)
@@ -53,6 +68,7 @@ namespace Projet_prog_avancee
                         Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
                     }
                     break;
+
 
                 case 2:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Nom"); //Fannie
@@ -67,19 +83,44 @@ namespace Projet_prog_avancee
                     }
                     break;
 
-                case 3:
-                    Console.WriteLine("Vous avez choisi le mode de consultation : Type"); //Jade -> Fini
+
+                case 3: //Fonctionne
+                    Console.WriteLine("Vous avez choisi le mode de consultation : Type");
                     Console.WriteLine("Quel type de projet voulez-vous rechercher ?");
 
                     bool trouve3 = false; 
 
+                    //On affiche tous les types de projets en les faisant correspondre à un numéro
                     int i = 1;
                     foreach (string t in _typeProjets)
                     {
                         Console.WriteLine(i + " : " + t);
                         i++;
                     }
-                    int typeChoisi = int.Parse(Console.ReadLine()); //à sécuriser
+
+                    //On veut vérifier que la réponse entrée par la personne est bien un nombre, et se situe entre 1 et 4.
+                    int typeChoisi = 0;
+                    bool continuerDemande3 = true;
+                    while (continuerDemande3)
+                    {
+                        try
+                        {
+                            typeChoisi = int.Parse(Console.ReadLine());
+                            if(typeChoisi>=1 && typeChoisi<=4)
+                            {
+                                continuerDemande3 = false;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Veuillez entrer un nombre entre 1 et 4.");
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Veuillez entrer un nombre entre 1 et 4.");
+                        }
+                    }
+
 
                     Console.WriteLine("Projet(s) correspondant(s) à votre recherche :");
                     foreach (Projet P in _listeProjets)
@@ -87,19 +128,20 @@ namespace Projet_prog_avancee
                         if (P._typeProjet == _typeProjets[typeChoisi - 1])
                         {
                             Console.WriteLine(P);
-                            trouve3 = true;
+                            trouve3 = true; //Un projet a été trouvé, on change le booléen pour ne pas afficher le message d'erreur
                         }
                     }
 
+                    //Si aucun projet n'est trouvé, on affiche ce message.
                     if (trouve3 == false)
                     {
                         Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
                     }
                     break;
 
+
                 case 4:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Année"); //Fannie
-
                     bool trouve4 = false; //Booleen qui vaut true si un projet correspondant à la recherche a été trouvé, false sinon
 
 
@@ -109,6 +151,7 @@ namespace Projet_prog_avancee
                         Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
                     }
                     break;
+
 
                 case 5:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Niveau"); //Fannie
@@ -122,8 +165,9 @@ namespace Projet_prog_avancee
                     }
                     break;
 
-                case 6:
-                    Console.WriteLine("Vous avez choisi le mode de consultation : Intervenant"); //Jade -> Fini
+
+                case 6: //Fonctionne
+                    Console.WriteLine("Vous avez choisi le mode de consultation : Intervenant");
                     Console.WriteLine("Quel est le nom de l'intervenant à rechercher ?");
                     string nomDemande = Console.ReadLine();
 
@@ -133,8 +177,8 @@ namespace Projet_prog_avancee
                     {
                         for (int k = 0; k < P._listeIntervenants.Count; k++) //Et on cherche tous les intervenants par projet
                         {
-                            //Si le nom ou le prenom de la personne correspond au nom demandé on affiche l'intervenant
-                            if(nomDemande== P._listeIntervenants[k]._nom || nomDemande== P._listeIntervenants[k]._prenom)
+                            //Si le nom ou le prenom de la personne correspond au nom demandé on affiche l'intervenant (en mettant tout en minuscule)
+                            if(nomDemande.ToLower() == P._listeIntervenants[k]._nom.ToLower() || nomDemande.ToLower() == P._listeIntervenants[k]._prenom.ToLower())
                             {
                                 Console.WriteLine(P._listeIntervenants[k].ToString());
                                 trouve6 = true;
@@ -146,45 +190,47 @@ namespace Projet_prog_avancee
                     {
                         Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
                     }
-
                     break;
 
-                case 7:
-                    Console.WriteLine("Vous avez choisi le mode de consultation : Promotion"); //Jade -> ne fonctionne pas
+
+                case 7: //Fonctionne
+                    Console.WriteLine("Vous avez choisi le mode de consultation : Promotion");
                     Console.WriteLine("Quelle promotion voulez-vous rechercher ?");
 
                     bool trouve7 = false;
 
-                    int promoChoisi = int.Parse(Console.ReadLine()); //à sécuriser
+                    int promoChoisi = 0;
 
-                    List<Projet> projetAafficher = new List<Projet>();
-
-                    if (promoChoisi < 2009 || promoChoisi > 2022)
+                    bool continuerDemande = true;
+                    while (continuerDemande)
                     {
-                        while (promoChoisi < 2009 || promoChoisi > 2022)
+                        try
                         {
-                            Console.WriteLine("Cette promotion n'est pas disponible");
-                            Console.WriteLine("Quelle promotion voulez-vous rechercher ?");
-                            promoChoisi = int.Parse(Console.ReadLine()); //à sécuriser
+                            promoChoisi = int.Parse(Console.ReadLine());
+                            continuerDemande = false;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Veuillez entrer un nombre pour chercher une promotion.");
                         }
                     }
-                    else
+
+                    //On enregistre les projets correspondants dans cette liste
+                    List<Projet> projetAafficher = new List<Projet>();
+
+                    foreach (Projet P in _listeProjets)
                     {
-                        Console.WriteLine("Projet(s) correspondant(s) à votre recherche :");
-                        foreach (Projet P in _listeProjets)
+                        foreach (Intervenant I in P._listeIntervenants)
                         {
-                            foreach (Intervenant I in P._listeIntervenants)
+                            if (I is Eleve)
                             {
-                                if (I is Eleve)
+                                Eleve E = (Eleve)I; //On change la classe de l'intervenant I -> il devient un élève sinon on n'a pas accès à sa promo
+                                if (promoChoisi == E._promotion)
                                 {
-                                    Eleve E = (Eleve)I; //On change la classe de l'intervenant I -> il devient un élève sinon on n'a pas accès à sa promo
-                                    if (promoChoisi == E._promotion)
+                                    if (projetAafficher.Contains(P) == false) //On veut éviter les doublons de projets si deux élèves font parti de la même promotion : on regarde si le projet n'est pas déjà dans la liste
                                     {
-                                        if (projetAafficher.Contains(P) == false) //On veut éviter les doublons de projets si deux élèves font parti de la même promotion : on regarde si le projet n'est pas déjà dans la liste
-                                        {
-                                            projetAafficher.Add(P);
-                                            trouve7 = true;
-                                        }
+                                        projetAafficher.Add(P);
+                                        trouve7 = true;
                                     }
                                 }
                             }
@@ -192,6 +238,7 @@ namespace Projet_prog_avancee
                     }
 
                     //Affichage des projets correspondants aux promotions
+                    Console.WriteLine("Projet(s) correspondant(s) à votre recherche :");
                     foreach (Projet P in projetAafficher)
                     {
                         Console.WriteLine(P);
@@ -201,7 +248,6 @@ namespace Projet_prog_avancee
                     {
                         Console.WriteLine("Aucun résultat ne correspond à votre recherche.");
                     }
-
                     break;
             }
         }

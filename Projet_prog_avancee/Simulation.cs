@@ -29,7 +29,6 @@ namespace Projet_prog_avancee
             _typeProjets = new List<string> { "Transdisciplinaire", "Transpromotion", "Projet informatique", "Projet logiciel" };
         }
 
-
         public void CreationProjet()
         {
             //Choix aléatoire du nom du projet parmi quelques propositions
