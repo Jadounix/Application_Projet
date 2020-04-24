@@ -56,7 +56,7 @@ namespace Projet_prog_avancee
                             
                             if (motCherche == P._listeMotsCles[j].ToLower())
                             {
-                                Console.WriteLine(P._listeMotsCles[j]);
+                                Console.WriteLine(P);
                                 trouve1 = true;
                             }
                         }
@@ -180,7 +180,8 @@ namespace Projet_prog_avancee
                             //Si le nom ou le prenom de la personne correspond au nom demandé on affiche l'intervenant (en mettant tout en minuscule)
                             if(nomDemande.ToLower() == P._listeIntervenants[k]._nom.ToLower() || nomDemande.ToLower() == P._listeIntervenants[k]._prenom.ToLower())
                             {
-                                Console.WriteLine(P._listeIntervenants[k].ToString());
+                                //Console.WriteLine(P._listeIntervenants[k].ToString());
+                                Console.WriteLine(P);
                                 trouve6 = true;
                             }
                         }

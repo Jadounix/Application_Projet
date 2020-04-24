@@ -14,8 +14,8 @@ namespace Projet_prog_avancee
         public int _dureeJours { get; set; }
         public int _annee { get; set; }
         public List<string> _listeMatieres;
-        public List<Livrable> _listeLivrables;
         public List<string> _listeMotsCles;
+        public List<Livrable> _listeLivrables;
         public List<Intervenant> _listeIntervenants;
         public static Random alea = new Random();
 
@@ -28,7 +28,7 @@ namespace Projet_prog_avancee
             _typeProjet = typeProjet;
             _dureeJours = dureeJours;
             _annee = annee;
-            _listeMotsCles = new List<string>(); //Faire une fonction de création de mot clé
+            _listeMotsCles = new List<string>(); CreationMotCle();
             _listeMatieres = new List<string> { "Maths", "Informatique", "Anglais", "Psychologie", "UX Design"};
             _listeLivrables = new List<Livrable>(); CreationLivrables();
             _listeIntervenants = new List<Intervenant>(); CreationIntervenants();
@@ -54,8 +54,9 @@ namespace Projet_prog_avancee
             chS += "Les mots clé projet : \n";
             foreach(string m in _listeMotsCles)
             {
-                chS += m;
+                chS += m+" | ";
             }
+            Console.WriteLine();
             return chS;
         }
 
@@ -123,6 +124,29 @@ namespace Projet_prog_avancee
                 _listeIntervenants.Add(new Exte("Thalès", nomIntervenants[noNomIntervenants], prenomIntervenants[noPrenomIntervenants], "Client"));
                 noNomIntervenants = alea.Next(nomIntervenants.Count);
                 noPrenomIntervenants = alea.Next(prenomIntervenants.Count);
+            }
+        }
+
+        //Création de mot-clés pour un projet
+        public void CreationMotCle()
+        {
+            //Liste des mots clés possibles pour les projets générés aléatoirement
+            List<string> motCles = new List<string> { "Sciences", "IA", "Cognitique", "Developpement", "Innovation", "Technique" };
+            int noMotCle = alea.Next(motCles.Count);
+
+            for (int i = 0; i < alea.Next(2, 4); i++)
+            {
+                if (_listeMotsCles.Contains(motCles[noMotCle]) == false) //On regarde si le mot clé n'est pas déjà présent pour éviter les doublons
+                {
+                    _listeMotsCles.Add(motCles[noMotCle]);
+                }
+                else
+                {
+                    while(_listeMotsCles.Contains(motCles[noMotCle]) == true) //On repioche le mot tant qu'on ne trouve pas un mot différent
+                    {
+                        noMotCle = alea.Next(motCles.Count);
+                    }
+                }
             }
         }
     }
