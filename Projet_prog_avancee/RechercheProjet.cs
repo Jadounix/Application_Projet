@@ -70,11 +70,23 @@ namespace Projet_prog_avancee
                     break;
 
 
-                case 2:
-                    Console.WriteLine("Vous avez choisi le mode de consultation : Nom"); //Fannie
+                case 2: //Fonctionne
+                    Console.WriteLine("Vous avez choisi le mode de consultation : Nom");
+                    Console.WriteLine("Veuillez entrer le nom du projet que vous cherchez");
+                    string nomProjet = Console.ReadLine();
 
                     bool trouve2 = false; //Booleen qui vaut true si un projet correspondant à la recherche a été trouvé, false sinon
 
+                    foreach (Projet P in _listeProjets) //On parcourt tous les projets
+                    {
+                        //On met en minuscule le nom du projet souhaité et chaque nom de projet présent dans la liste pour la comparaison
+                        if (nomProjet.ToLower() == P._nom.ToLower())
+                        {
+                            //Console.WriteLine("Projet trouvé :");
+                            Console.WriteLine(P);
+                            trouve2 = true;
+                        }
+                    }
 
                     //Dans le cas où il n'y a pas de projets correspondants on affiche ce message
                     if (trouve2 == false)
@@ -140,10 +152,43 @@ namespace Projet_prog_avancee
                     break;
 
 
-                case 4:
-                    Console.WriteLine("Vous avez choisi le mode de consultation : Année"); //Fannie
+                case 4: //Fonctionne
+                    Console.WriteLine("Vous avez choisi le mode de consultation : Année");
                     bool trouve4 = false; //Booleen qui vaut true si un projet correspondant à la recherche a été trouvé, false sinon
+                    int anneeMin = 2019;
+                    int anneeMax = 2020;
 
+                    foreach (Projet P in _listeProjets) //On parcourt tous les projets
+                    {
+                        if (P._annee < anneeMin)
+                        {
+                            anneeMin = P._annee;
+                        }
+                        else if (P._annee > anneeMax)
+                        {
+                            anneeMax = P._annee;
+                        }
+                    }
+
+                    int anneeProjet;
+
+                    do
+                    {
+                        Console.WriteLine("La base de données contient des projets de {0} à {1}.", anneeMin, anneeMax);
+                        Console.WriteLine("Veuillez entrer l'année du projet que vous cherchez");
+                        anneeProjet = int.Parse(Console.ReadLine());
+                    }
+                    while (anneeProjet < anneeMin || anneeProjet > anneeMax);
+
+                    foreach (Projet P in _listeProjets) //On parcourt tous les projets
+                    {
+                        if (anneeProjet == P._annee)
+                        {
+                            //Console.WriteLine("Projet trouvé :");
+                            Console.WriteLine(P);
+                            trouve4 = true;
+                        }
+                    }
 
                     //Dans le cas où il n'y a pas de projets correspondants on affiche ce message
                     if (trouve4 == false)
