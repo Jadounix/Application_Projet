@@ -106,7 +106,7 @@ namespace Projet_prog_avancee
 
             for (int i = 0; i < nbEleves; i++)
             {
-                _listeIntervenants.Add(new Eleve(2022, nomIntervenants[noNomIntervenants], prenomIntervenants[noPrenomIntervenants], "chef de projet"));
+                _listeIntervenants.Add(new Eleve(2022, "1A", nomIntervenants[noNomIntervenants], prenomIntervenants[noPrenomIntervenants], "chef de projet"));
                 noNomIntervenants = alea.Next(nomIntervenants.Count);
                 noPrenomIntervenants = alea.Next(prenomIntervenants.Count);
             }

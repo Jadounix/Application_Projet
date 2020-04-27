@@ -198,10 +198,56 @@ namespace Projet_prog_avancee
                     break;
 
 
-                case 5:
-                    Console.WriteLine("Vous avez choisi le mode de consultation : Niveau"); //Fannie
+                case 5: //Fonctionne
+                    Console.WriteLine("Vous avez choisi le mode de consultation : Niveau");
+                    Console.WriteLine("Quel niveau d'étude vous intéresse ?");
                     bool trouve5 = false; //Booleen qui vaut true si un projet correspondant à la recherche a été trouvé, false sinon
 
+
+                    //On affiche tous les niveaux des élèves en les faisant correspondre à un numéro
+                    int m = 1;
+                    while (m <= 3)
+                    {
+                        Console.WriteLine("{0} : {0}A", m);
+                        m++;
+                    }
+
+                    //On veut vérifier que la réponse entrée par la personne est bien un nombre, et se situe entre 1 et 3.
+                    int niveauChoisi;
+                    string niveau;
+                    bool continuerDemande5 = true;
+                    while (continuerDemande5)
+                    {
+                        try
+                        {
+                            niveauChoisi = int.Parse(Console.ReadLine());
+                            if (niveauChoisi >= 1 && niveauChoisi <= 3)
+                            {
+                                continuerDemande5 = false;
+                                niveau = niveauChoisi.ToString() + "A";
+                                foreach (Projet P in _listeProjets) //On parcourt tous les projets
+                                {
+                                    foreach (Eleve E in P._listeIntervenants) //On parcourt tous les intervenants du projet
+                                    {
+                                        if (E._niveau == niveau)
+                                        {
+                                            Console.WriteLine("Projet(s) trouvé(s) :");
+                                            Console.WriteLine(P);
+                                            trouve5 = true;
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Veuillez entrer un nombre entre 1 et 3.");
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            //Console.WriteLine("Veuillez entrer un nombre entre 1 et 3.");
+                        }
+                    }
 
                     //Dans le cas où il n'y a pas de projets correspondants on affiche ce message
                     if (trouve5 == false)
