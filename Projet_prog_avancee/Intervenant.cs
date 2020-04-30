@@ -26,36 +26,5 @@ namespace Projet_prog_avancee
             string chS = "Nom : " + _nom + " | Prénom : " + _prenom + " | Rôle : " + _role + "\n";
             return chS;
         }
-
-        public void RechercheParIntervenant()
-        {
-            Console.WriteLine("Quel est le type d'intervenant recherché ?");
-            Console.WriteLine("1 : Elève\n2 : Professeur\n3 : Personne extérieur");
-            int typeChoisi = int.Parse(Console.ReadLine());
-
-            if (typeChoisi == 1)
-            {
-                //Appel à eleve
-            }
-            else
-            {
-                if(typeChoisi == 2)
-                {
-                    //Appel à prof
-                }
-                else
-                {
-                    if(typeChoisi == 3)
-                    {
-                        //Appel à exte
-                    }
-                    else
-                    {
-                        Console.WriteLine("Veuillez choisir un nombre entre 1 et 3 pour poursuivre la recherche");
-                    }
-                }
-            }
-        }
-
     }
 }
