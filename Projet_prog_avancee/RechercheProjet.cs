@@ -213,8 +213,8 @@ namespace Projet_prog_avancee
                     }
 
                     //On veut vérifier que la réponse entrée par la personne est bien un nombre, et se situe entre 1 et 3.
-                    int niveauChoisi;
-                    string niveau;
+                    int niveauChoisi = 0;
+                    string niveau = "";
                     bool continuerDemande5 = true;
                     while (continuerDemande5)
                     {
@@ -245,7 +245,7 @@ namespace Projet_prog_avancee
                         }
                         catch (Exception e)
                         {
-                            //Console.WriteLine("Veuillez entrer un nombre entre 1 et 3.");
+                            Console.WriteLine("Veuillez entrer un nombre entre 1 et 3.");
                         }
                     }
 
