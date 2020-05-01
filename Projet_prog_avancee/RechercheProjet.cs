@@ -53,7 +53,7 @@ namespace Projet_prog_avancee
                     {
                         for (int j = 0; j < P._listeMotsCles.Count; j++) //Et on cherche tous les mots clés par projet
                         {
-                            
+
                             if (motCherche == P._listeMotsCles[j].ToLower())
                             {
                                 Console.WriteLine(P);
@@ -100,7 +100,7 @@ namespace Projet_prog_avancee
                     Console.WriteLine("Vous avez choisi le mode de consultation : Type");
                     Console.WriteLine("Quel type de projet voulez-vous rechercher ?");
 
-                    bool trouve3 = false; 
+                    bool trouve3 = false;
 
                     //On affiche tous les types de projets en les faisant correspondre à un numéro
                     int i = 1;
@@ -225,27 +225,30 @@ namespace Projet_prog_avancee
                             {
                                 continuerDemande5 = false;
                                 niveau = niveauChoisi.ToString() + "A";
-                                foreach (Projet P in _listeProjets) //On parcourt tous les projets
-                                {
-                                    foreach (Eleve E in P._listeIntervenants) //On parcourt tous les intervenants du projet
-                                    {
-                                        if (E._niveau == niveau)
-                                        {
-                                            Console.WriteLine("Projet(s) trouvé(s) :");
-                                            Console.WriteLine(P);
-                                            trouve5 = true;
-                                        }
-                                    }
-                                }
+
                             }
                             else
                             {
                                 Console.WriteLine("Veuillez entrer un nombre entre 1 et 3.");
                             }
                         }
+
                         catch (Exception e)
                         {
-                            Console.WriteLine("Veuillez entrer un nombre entre 1 et 3.");
+                            Console.WriteLine("Veuillez entrer un nombre entre 5 et 8.");
+                        }
+                    }
+
+                    foreach (Projet P in _listeProjets) //On parcourt tous les projets
+                    {
+                        foreach (Eleve E in P._listeIntervenants) //On parcourt tous les intervenants du projet
+                        {
+                            if (E._niveau == niveau)
+                            {
+                                Console.WriteLine("Projet(s) trouvé(s) :");
+                                Console.WriteLine(P);
+                                trouve5 = true;
+                            }
                         }
                     }
 
