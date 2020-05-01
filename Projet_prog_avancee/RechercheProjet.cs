@@ -53,7 +53,7 @@ namespace Projet_prog_avancee
                     {
                         for (int j = 0; j < P._listeMotsCles.Count; j++) //Et on cherche tous les mots clés par projet
                         {
-                            
+
                             if (motCherche == P._listeMotsCles[j].ToLower())
                             {
                                 Console.WriteLine(P);
@@ -100,7 +100,7 @@ namespace Projet_prog_avancee
                     Console.WriteLine("Vous avez choisi le mode de consultation : Type");
                     Console.WriteLine("Quel type de projet voulez-vous rechercher ?");
 
-                    bool trouve3 = false; 
+                    bool trouve3 = false;
 
                     //On affiche tous les types de projets en les faisant correspondre à un numéro
                     int i = 1;
@@ -213,7 +213,7 @@ namespace Projet_prog_avancee
                     }
 
                     //On veut vérifier que la réponse entrée par la personne est bien un nombre, et se situe entre 1 et 3.
-                    int niveauChoisi;
+                    int niveauChoisi = 0;
                     string niveau = "";
                     bool continuerDemande5 = true;
                     while (continuerDemande5)
@@ -225,7 +225,7 @@ namespace Projet_prog_avancee
                             {
                                 continuerDemande5 = false;
                                 niveau = niveauChoisi.ToString() + "A";
-                                
+
                             }
                             else
                             {
