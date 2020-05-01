@@ -214,7 +214,7 @@ namespace Projet_prog_avancee
 
                     //On veut vérifier que la réponse entrée par la personne est bien un nombre, et se situe entre 1 et 3.
                     int niveauChoisi;
-                    string niveau;
+                    string niveau = "";
                     bool continuerDemande5 = true;
                     while (continuerDemande5)
                     {
@@ -225,27 +225,30 @@ namespace Projet_prog_avancee
                             {
                                 continuerDemande5 = false;
                                 niveau = niveauChoisi.ToString() + "A";
-                                foreach (Projet P in _listeProjets) //On parcourt tous les projets
-                                {
-                                    foreach (Eleve E in P._listeIntervenants) //On parcourt tous les intervenants du projet
-                                    {
-                                        if (E._niveau == niveau)
-                                        {
-                                            Console.WriteLine("Projet(s) trouvé(s) :");
-                                            Console.WriteLine(P);
-                                            trouve5 = true;
-                                        }
-                                    }
-                                }
+                                
                             }
                             else
                             {
                                 Console.WriteLine("Veuillez entrer un nombre entre 1 et 3.");
                             }
                         }
+
                         catch (Exception e)
                         {
-                            //Console.WriteLine("Veuillez entrer un nombre entre 1 et 3.");
+                            Console.WriteLine("Veuillez entrer un nombre entre 5 et 8.");
+                        }
+                    }
+
+                    foreach (Projet P in _listeProjets) //On parcourt tous les projets
+                    {
+                        foreach (Eleve E in P._listeIntervenants) //On parcourt tous les intervenants du projet
+                        {
+                            if (E._niveau == niveau)
+                            {
+                                Console.WriteLine("Projet(s) trouvé(s) :");
+                                Console.WriteLine(P);
+                                trouve5 = true;
+                            }
                         }
                     }
 
