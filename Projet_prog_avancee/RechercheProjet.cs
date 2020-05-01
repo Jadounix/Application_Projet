@@ -241,13 +241,8 @@ namespace Projet_prog_avancee
 
                     foreach (Projet P in _listeProjets) //On parcourt tous les projets
                     {
-                        foreach (Eleve E in P._listeIntervenants) //On parcourt tous les intervenants du projet
                         {
-                            if (E._niveau == niveau)
                             {
-                                Console.WriteLine("Projet(s) trouvé(s) :");
-                                Console.WriteLine(P);
-                                trouve5 = true;
                             }
                         }
                     }
