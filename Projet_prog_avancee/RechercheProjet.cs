@@ -241,11 +241,21 @@ namespace Projet_prog_avancee
 
                     foreach (Projet P in _listeProjets) //On parcourt tous les projets
                     {
+                        foreach (Intervenant I in P._listeIntervenants)
                         {
+                            if (I is Eleve)
                             {
+                                Eleve E = (Eleve)I; //On change la classe de l'intervenant I -> il devient un élève sinon on n'a pas accès à sa promo
+                                if (E._niveau == niveau)
+                                {
+                                    Console.WriteLine("Projet(s) trouvé(s) :");
+                                    Console.WriteLine(P);
+                                    trouve5 = true;
+                                }
                             }
                         }
                     }
+
 
                     //Dans le cas où il n'y a pas de projets correspondants on affiche ce message
                     if (trouve5 == false)
