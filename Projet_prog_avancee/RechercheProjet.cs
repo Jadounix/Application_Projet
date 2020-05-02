@@ -40,7 +40,7 @@ namespace Projet_prog_avancee
                 }
             }
 
-            switch (modeChoisi) //Point d'avancement le 3 mai <3
+            switch (modeChoisi)
             {
                 case 1:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Mots clés");
@@ -70,7 +70,7 @@ namespace Projet_prog_avancee
                     break;
 
 
-                case 2: //Fonctionne
+                case 2:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Nom");
                     Console.WriteLine("Veuillez entrer le nom du projet que vous cherchez");
                     string nomProjet = Console.ReadLine();
@@ -96,7 +96,7 @@ namespace Projet_prog_avancee
                     break;
 
 
-                case 3: //Fonctionne
+                case 3:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Type");
                     Console.WriteLine("Quel type de projet voulez-vous rechercher ?");
 
@@ -152,7 +152,7 @@ namespace Projet_prog_avancee
                     break;
 
 
-                case 4: //Fonctionne
+                case 4:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Année");
                     bool trouve4 = false; //Booleen qui vaut true si un projet correspondant à la recherche a été trouvé, false sinon
                     int anneeMin = 2019;
@@ -198,7 +198,7 @@ namespace Projet_prog_avancee
                     break;
 
 
-                case 5: //Fonctionne
+                case 5:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Niveau");
                     Console.WriteLine("Quel niveau d'étude vous intéresse ?");
                     bool trouve5 = false; //Booleen qui vaut true si un projet correspondant à la recherche a été trouvé, false sinon
@@ -265,7 +265,7 @@ namespace Projet_prog_avancee
                     break;
 
 
-                case 6: //Fonctionne
+                case 6:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Intervenant");
                     Console.WriteLine("Quel est le nom de l'intervenant à rechercher ?");
                     string nomDemande = Console.ReadLine();
@@ -293,7 +293,7 @@ namespace Projet_prog_avancee
                     break;
 
 
-                case 7: //Fonctionne
+                case 7:
                     Console.WriteLine("Vous avez choisi le mode de consultation : Promotion");
                     Console.WriteLine("Quelle promotion voulez-vous rechercher ?");
 

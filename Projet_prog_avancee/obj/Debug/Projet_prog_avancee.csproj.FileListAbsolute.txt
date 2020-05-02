@@ -10,3 +10,4 @@ C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\bin\Debug\
 C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\obj\Debug\Projet_prog_avancee.csproj.CoreCompileInputs.cache
 C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\obj\Debug\Projet_prog_avancee.exe
 C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\obj\Debug\Projet_prog_avancee.pdb
+C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\obj\Debug\Projet_prog_avancee.csprojAssemblyReference.cache

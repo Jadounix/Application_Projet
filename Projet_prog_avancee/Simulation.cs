@@ -70,7 +70,7 @@ namespace Projet_prog_avancee
 
             while (continuer == true)
             {
-                Console.WriteLine("Bienvenue dans votre outil de gestion de projet ?\nQue voulez vous faire ?");
+                Console.WriteLine("Bienvenue dans votre outil de gestion de projet !\nQue voulez vous faire ?");
                 Console.WriteLine("1 : Rechercher un projet\n2 : Ajouter un projet");
 
                 bool continuerDemander = true;
