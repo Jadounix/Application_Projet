@@ -1,26 +1,27 @@
 ﻿<Properties StartupConfiguration="{C2594683-1E8D-42F3-91C1-0A8E35909CED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Projet_prog_avancee/RechercheProjet.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Projet_prog_avancee/AjoutProjet.cs">
     <Files>
-      <File FileName="Projet_prog_avancee/Program.cs" Line="20" Column="1" />
-      <File FileName="Projet_prog_avancee/AjoutProjet.cs" />
+      <File FileName="Projet_prog_avancee/Program.cs" Line="16" Column="15" />
+      <File FileName="Projet_prog_avancee/AjoutProjet.cs" Line="76" Column="14" />
       <File FileName="Projet_prog_avancee/Eleve.cs" />
       <File FileName="Projet_prog_avancee/Exte.cs" />
       <File FileName="Projet_prog_avancee/Intervenant.cs" />
       <File FileName="Projet_prog_avancee/Livrable.cs" />
       <File FileName="Projet_prog_avancee/Professeur.cs" />
-      <File FileName="Projet_prog_avancee/Projet.cs" />
+      <File FileName="Projet_prog_avancee/Projet.cs" Line="30" Column="28" />
       <File FileName="Projet_prog_avancee/Rapport.cs" />
-      <File FileName="Projet_prog_avancee/RechercheProjet.cs" Line="257" Column="22" />
+      <File FileName="Projet_prog_avancee/RechercheProjet.cs" />
       <File FileName="Projet_prog_avancee/Simulation.cs" />
       <File FileName="Projet_prog_avancee/SiteWeb.cs" />
       <File FileName="Projet_prog_avancee/Soutenance.cs" />
+      <File FileName="Projet_prog_avancee/XML_test.cs" Line="24" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Projet_prog_avancee" expanded="True">
             <Node name="Projet_prog_avancee" expanded="True">
-              <Node name="RechercheProjet.cs" selected="True" />
+              <Node name="AjoutProjet.cs" selected="True" />
             </Node>
           </Node>
         </State>
