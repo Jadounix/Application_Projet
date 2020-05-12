@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Projet_prog_avancee/AjoutProjet.cs">
     <Files>
       <File FileName="Projet_prog_avancee/Program.cs" Line="16" Column="15" />
-      <File FileName="Projet_prog_avancee/AjoutProjet.cs" Line="76" Column="14" />
+      <File FileName="Projet_prog_avancee/AjoutProjet.cs" Line="194" Column="1" />
       <File FileName="Projet_prog_avancee/Eleve.cs" />
       <File FileName="Projet_prog_avancee/Exte.cs" />
       <File FileName="Projet_prog_avancee/Intervenant.cs" />
@@ -11,10 +11,10 @@
       <File FileName="Projet_prog_avancee/Projet.cs" Line="30" Column="28" />
       <File FileName="Projet_prog_avancee/Rapport.cs" />
       <File FileName="Projet_prog_avancee/RechercheProjet.cs" />
-      <File FileName="Projet_prog_avancee/Simulation.cs" />
+      <File FileName="Projet_prog_avancee/Simulation.cs" Line="15" Column="1" />
       <File FileName="Projet_prog_avancee/SiteWeb.cs" />
       <File FileName="Projet_prog_avancee/Soutenance.cs" />
-      <File FileName="Projet_prog_avancee/XML_test.cs" Line="24" Column="35" />
+      <File FileName="Projet_prog_avancee/XML_test.cs" Line="115" Column="59" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

@@ -17,18 +17,28 @@ namespace Projet_prog_avancee
     // création d'une classe
     public class Objet
     {
-        public string Attribut1 { get; set; }
-        public string Attribut2 { get; set; }
-
-        private string Attribut3 { get; set; }
-        private int Attribut4;
+        public int Attribut1 { get; set; }
+        public int Attribut2 { get; set; }
+        public int Attribut3 { get; set; }
+        public string Attribut4 { get; set; }
+        public string Attribut5 { get; set; }
 
         public Objet()
         {
-            Attribut1 = "Projet";
-            Attribut2 = "Intervenant";
-            Attribut3 = "bonsoir";
-            Attribut4 = 15;
+            Attribut1 = 0;
+            Attribut2 = 0;
+            Attribut3 = 0;
+            Attribut4 = "";
+            Attribut5 = "";
+        }
+
+        public Objet(int Attri1, int Attri2, int Attri3, string Attri4, string Attri5)
+        {
+            Attribut1 = Attri1;
+            Attribut2 = Attri2;
+            Attribut3 = Attri3;
+            Attribut4 = Attri4;
+            Attribut5 = Attri5;
         }
     }
 
@@ -53,11 +63,13 @@ namespace Projet_prog_avancee
                 {
                     nbIntervenants = int.Parse(Console.ReadLine());
 
-                    // on le transforme en xml
-                    string xmlIntervenants = XML.ConvertToXml(nbIntervenants);
 
-                    // On écrit dans un fichier
-                    File.WriteAllText("test.xml", xmlIntervenants);
+                    //// on le transforme en xml
+                    //string xmlIntervenants = XML.ConvertToXml(nbIntervenants);
+
+                    //// On écrit dans un fichier
+                    //File.WriteAllText("test.xml", xmlIntervenants);
+
 
                     continuerDemandeNb = false;
                 }
@@ -78,11 +90,11 @@ namespace Projet_prog_avancee
                 {
                     nbJours = int.Parse(Console.ReadLine());
 
-                    // on le transforme en xml
-                    string xmlJours = XML.ConvertToXml(nbJours);
+                    //// on le transforme en xml
+                    //string xmlJours = XML.ConvertToXml(nbJours);
 
-                    // On écrit dans un fichier
-                    File.WriteAllText("test.xml", xmlJours);
+                    //// On écrit dans un fichier
+                    //File.WriteAllText("test.xml", xmlJours);
 
                     continuerDemandeNbJours = false;
                 }
@@ -103,11 +115,11 @@ namespace Projet_prog_avancee
                 {
                     annee = int.Parse(Console.ReadLine());
 
-                    // on le transforme en xml
-                    string xmlAnnee = XML.ConvertToXml(annee);
+                    //// on le transforme en xml
+                    //string xmlAnnee = XML.ConvertToXml(annee);
 
-                    // On écrit dans un fichier
-                    File.WriteAllText("test.xml", xmlAnnee);
+                    //// On écrit dans un fichier
+                    //File.WriteAllText("test.xml", xmlAnnee);
 
                     continuerDemandeAnnee = false;
                 }
@@ -122,11 +134,11 @@ namespace Projet_prog_avancee
             Console.WriteLine("Veuillez entrer le nom du projet");
             string nomProjet = Console.ReadLine();
 
-            // on le transforme en xml
-            string xmlNom = XML.ConvertToXml(nomProjet);
+            //// on le transforme en xml
+            //string xmlNom = XML.ConvertToXml(nomProjet);
 
-            // On écrit dans un fichier
-            File.WriteAllText("test.xml", xmlNom);
+            //// On écrit dans un fichier
+            //File.WriteAllText("test.xml", xmlNom);
 
             /*=======================================================================================*/
 
@@ -148,11 +160,11 @@ namespace Projet_prog_avancee
                 {
                     typeChoisi = int.Parse(Console.ReadLine());
 
-                    // on le transforme en xml
-                    string xmlOutput = XML.ConvertToXml(typeChoisi);
+                    //// on le transforme en xml
+                    //string xmlOutput = XML.ConvertToXml(typeChoisi);
 
-                    // On écrit dans un fichier
-                    File.WriteAllText("test.xml", xmlOutput);
+                    //// On écrit dans un fichier
+                    //File.WriteAllText("test.xml", xmlOutput);
 
                     if (typeChoisi >= 1 && typeChoisi <= 4)
                     {
@@ -172,6 +184,7 @@ namespace Projet_prog_avancee
 
             /*=======================================================================================*/
 
+            //Objet ProjetSauv = new Objet(nbIntervenants, nbJours, annee, nomProjet, typeProjet);
             //Ajout du projet à la liste des projets
             this._listeProjets.Add(new Projet(nbIntervenants, nbJours, annee, nomProjet, typeProjet));
 
