@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Projet_prog_avancee
     class Simulation
     {
         protected int _nbProjets;
-        protected List<Projet> _listeProjets;
+        protected List<Projet> _listeProjets { get; set; }
         protected List<string> _typeProjets;
         public static Random alea = new Random();
 
@@ -59,6 +60,12 @@ namespace Projet_prog_avancee
             {
                 Console.WriteLine(p.ToString());
             }
+
+            // on le transforme en xml
+            string xmlOutput = XML_test.ConvertToXml(_listeProjets);
+
+            // On écrit dans un fichier
+            File.WriteAllText("test.xml", xmlOutput);
         }
 
         public void LancementApplication()

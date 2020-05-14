@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Projet_prog_avancee
 {
-    abstract class Intervenant //Classe abstraite
+    [Serializable]
+    public abstract class Intervenant //Classe abstraite
     {
         public string _nom { get; set; }
         public string _prenom { get; set; }

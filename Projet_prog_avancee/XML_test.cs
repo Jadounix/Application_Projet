@@ -118,7 +118,7 @@ public class XML_test
                 return stringWriter.ToString();
             }
         }
-        catch (Exception ex)
+        catch (NotImplementedException ex)
         {
             // Si la création de la chaine de caractère a échouée et
             // renvoyé la moindre erreur (utilisation du type général

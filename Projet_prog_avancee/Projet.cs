@@ -6,21 +6,35 @@ using System.Threading.Tasks;
 
 namespace Projet_prog_avancee
 {
-    class Projet
+    [Serializable]
+    public class Projet
     {
         public int _nbIntervenants { get; set; }
         public string _nom { get; set; }
         public string _typeProjet { get; set; }
         public int _dureeJours { get; set; }
         public int _annee { get; set; }
-        public List<string> _listeMatieres;
-        public List<string> _listeMotsCles;
-        public List<Livrable> _listeLivrables;
-        public List<Intervenant> _listeIntervenants;
+        public List<string> _listeMatieres { get; set; }
+        public List<string> _listeMotsCles { get; set; }
+        public List<Livrable> _listeLivrables { get; set; }
+        public List<Intervenant> _listeIntervenants { get; set; }
         public static Random alea = new Random();
 
 
         //Constructeur
+        public Projet()
+        {
+            _nbIntervenants = 2;
+            _nom = "Projet";
+            _typeProjet = "Type";
+            _dureeJours = 30;
+            _annee = 2020;
+            _listeMotsCles = new List<string>(); CreationMotCle();
+            _listeMatieres = new List<string> { "Maths", "Informatique", "Anglais", "Psychologie", "UX Design" };
+            _listeLivrables = new List<Livrable>(); CreationLivrables();
+            _listeIntervenants = new List<Intervenant>(); CreationIntervenants();
+        }
+
         public Projet(int nbIntervenants, int dureeJours, int annee, string nom, string typeProjet)
         {
             _nbIntervenants = nbIntervenants;

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Projet_prog_avancee
 {
-    abstract class Livrable
+    [Serializable]
+    public abstract class Livrable
     {
         protected string _dateRendu;
 
