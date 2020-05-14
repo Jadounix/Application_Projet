@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace Projet_prog_avancee
 {
-    class Exte : Intervenant
+    public class Exte : Intervenant
     {
         private string _entreprise;
 
         //Constructeur
+        public Exte() : base()//necessaire pour xml
+        {
+            _entreprise = "entreprise";
+        }
+
         public Exte(string entreprise, string nom, string prenom, string role) : base(nom, prenom, role)
         {
             _entreprise = entreprise;

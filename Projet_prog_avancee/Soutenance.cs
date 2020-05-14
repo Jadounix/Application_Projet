@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Projet_prog_avancee
 {
@@ -13,7 +14,7 @@ namespace Projet_prog_avancee
 
         //Constructeur
 
-        public Soutenance() : base()
+        public Soutenance() : base() //necessaire pour xml
         {
             _duree = 30;
         }
