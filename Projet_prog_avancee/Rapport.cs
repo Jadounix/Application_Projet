@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace Projet_prog_avancee
 {
-    class Rapport : Livrable
+    [Serializable]
+    public class Rapport : Livrable
     {
         private int _nbPages;
 
         //Constructeur
+        public Rapport() : base() //necessaire pour xml
+        {
+            _nbPages = 10;
+        }
+
         public Rapport(string dateRendu, int nbPages) : base(dateRendu)
         {
             _nbPages = nbPages;

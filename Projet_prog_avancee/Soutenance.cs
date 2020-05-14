@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace Projet_prog_avancee
 {
-    class Soutenance : Livrable
+    [Serializable]
+    public class Soutenance : Livrable
     {
         private int _duree;
 
         //Constructeur
+
+        public Soutenance() : base()
+        {
+            _duree = 30;
+        }
+
         public Soutenance(string dateRendu, int duree) : base(dateRendu)
         {
             _duree = duree;

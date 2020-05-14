@@ -12,6 +12,11 @@ namespace Projet_prog_avancee
         protected string _dateRendu;
 
         //Constructeur
+        public Livrable() //necessaire pour xml
+        {
+            _dateRendu = "date";
+        }
+
         public Livrable(string dateRendu)
         {
             _dateRendu = dateRendu;

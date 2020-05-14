@@ -22,7 +22,7 @@ namespace Projet_prog_avancee
 
 
         //Constructeur
-        public Projet()
+        public Projet() //necessaire pour xml
         {
             _nbIntervenants = 2;
             _nom = "Projet";
