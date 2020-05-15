@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Projet_prog_avancee/XML_test.cs">
     <Files>
       <File FileName="Projet_prog_avancee/Program.cs" Line="14" Column="38" />
-      <File FileName="Projet_prog_avancee/AjoutProjet.cs" />
+      <File FileName="Projet_prog_avancee/AjoutProjet.cs" Line="130" Column="54" />
       <File FileName="Projet_prog_avancee/Eleve.cs" />
       <File FileName="Projet_prog_avancee/Exte.cs" />
       <File FileName="Projet_prog_avancee/Intervenant.cs" />
@@ -11,7 +11,7 @@
       <File FileName="Projet_prog_avancee/Projet.cs" />
       <File FileName="Projet_prog_avancee/Rapport.cs" />
       <File FileName="Projet_prog_avancee/RechercheProjet.cs" />
-      <File FileName="Projet_prog_avancee/Simulation.cs" />
+      <File FileName="Projet_prog_avancee/Simulation.cs" Line="62" Column="14" />
       <File FileName="Projet_prog_avancee/SiteWeb.cs" />
       <File FileName="Projet_prog_avancee/Soutenance.cs" />
       <File FileName="Projet_prog_avancee/XML_test.cs" Line="115" Column="1" />

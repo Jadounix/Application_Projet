@@ -60,12 +60,6 @@ namespace Projet_prog_avancee
             {
                 Console.WriteLine(p.ToString());
             }
-
-            // on le transforme en xml
-            string xmlOutput = XML_test.ConvertToXml(_listeProjets);
-
-            // On écrit dans un fichier
-            File.WriteAllText("test.xml", xmlOutput);
         }
 
         public void LancementApplication()
