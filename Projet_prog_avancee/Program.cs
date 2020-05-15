@@ -13,9 +13,6 @@ namespace Projet_prog_avancee
             Simulation S = new Simulation(5);
             S.LancementApplication();
 
-            //XML.Test1();
-            //XMLSerializingTest.Test2("test.xml");
-
             Console.ReadLine();
         }
     }

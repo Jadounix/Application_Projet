@@ -30,7 +30,7 @@ namespace Projet_prog_avancee
             _typeProjets = new List<string> { "Transdisciplinaire", "Transpromotion", "Projet informatique", "Projet logiciel" };
         }
 
-        public void CreationProjet()
+        public void CreationProjet() // On s'en est servi au début du projet. Inutile avec la fonction de sauvegarde
         {
             //Choix aléatoire du nom du projet parmi quelques propositions
             List<string> nomProjets = new List<string> { "SentiAnt", "ComPlant", "Projet Motus", "Drowsy", "Projet Voltaire", "Burpees", "SpaceInvaders" };
@@ -64,8 +64,21 @@ namespace Projet_prog_avancee
 
         public void LancementApplication()
         {
-            this.CreationProjet();
+            //this.CreationProjet();
 
+            // on récupère ce qui est écrit dans le fichier
+            string xmlInput = File.ReadAllText("test.xml");
+
+            // on "déserialize" le contenu du fichier
+            _listeProjets = XML_test.ConvertFromXml<List<Projet>>(xmlInput);
+
+            // on affiche tous les projets
+            foreach (Projet p in _listeProjets)
+            {
+                Console.WriteLine(p.ToString());
+            }
+
+            // lancement
             int choix = 0;
             bool continuer = true;
 
