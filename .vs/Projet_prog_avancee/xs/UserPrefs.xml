@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{C2594683-1E8D-42F3-91C1-0A8E35909CED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Projet_prog_avancee/Projet.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Projet_prog_avancee/XML_test.cs">
     <Files>
       <File FileName="Projet_prog_avancee/Program.cs" Line="14" Column="38" />
-      <File FileName="Projet_prog_avancee/AjoutProjet.cs" Line="122" Column="1" />
-      <File FileName="Projet_prog_avancee/Eleve.cs" Line="10" Column="12" />
-      <File FileName="Projet_prog_avancee/Exte.cs" Line="9" Column="12" />
-      <File FileName="Projet_prog_avancee/Intervenant.cs" Line="13" Column="31" />
-      <File FileName="Projet_prog_avancee/Livrable.cs" Line="10" Column="19" />
-      <File FileName="Projet_prog_avancee/Professeur.cs" Line="9" Column="12" />
-      <File FileName="Projet_prog_avancee/Projet.cs" Line="101" Column="1" />
-      <File FileName="Projet_prog_avancee/Rapport.cs" Line="10" Column="5" />
-      <File FileName="Projet_prog_avancee/RechercheProjet.cs" Line="1" Column="1" />
-      <File FileName="Projet_prog_avancee/Simulation.cs" Line="1" Column="1" />
+      <File FileName="Projet_prog_avancee/AjoutProjet.cs" />
+      <File FileName="Projet_prog_avancee/Eleve.cs" />
+      <File FileName="Projet_prog_avancee/Exte.cs" />
+      <File FileName="Projet_prog_avancee/Intervenant.cs" />
+      <File FileName="Projet_prog_avancee/Livrable.cs" />
+      <File FileName="Projet_prog_avancee/Professeur.cs" />
+      <File FileName="Projet_prog_avancee/Projet.cs" />
+      <File FileName="Projet_prog_avancee/Rapport.cs" />
+      <File FileName="Projet_prog_avancee/RechercheProjet.cs" />
+      <File FileName="Projet_prog_avancee/Simulation.cs" />
       <File FileName="Projet_prog_avancee/SiteWeb.cs" />
-      <File FileName="Projet_prog_avancee/Soutenance.cs" Line="10" Column="19" />
+      <File FileName="Projet_prog_avancee/Soutenance.cs" />
       <File FileName="Projet_prog_avancee/XML_test.cs" Line="115" Column="1" />
     </Files>
     <Pads>
@@ -21,7 +21,7 @@
         <State name="__root__">
           <Node name="Projet_prog_avancee" expanded="True">
             <Node name="Projet_prog_avancee" expanded="True">
-              <Node name="Projet.cs" selected="True" />
+              <Node name="XML_test.cs" selected="True" />
             </Node>
           </Node>
         </State>

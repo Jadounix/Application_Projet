@@ -98,7 +98,7 @@ namespace Projet_prog_avancee
         public void CreationIntervenants()
         {
             int nbEleves = alea.Next(1, _nbIntervenants / 2);
-            int nbProf = alea.Next(1, (_nbIntervenants - nbEleves) - 1);
+            int nbProf = alea.Next(1, (_nbIntervenants - nbEleves) + 1);
             int nbExte = alea.Next(0, nbProf);
 
 
