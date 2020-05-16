@@ -85,7 +85,7 @@ namespace Projet_prog_avancee
             while (continuer == true)
             {
                 Console.WriteLine("Bienvenue dans votre outil de gestion de projet !\nQue voulez vous faire ?");
-                Console.WriteLine("1 : Rechercher un projet\n2 : Ajouter un projet");
+                Console.WriteLine("1 : Rechercher un projet\n2 : Ajouter un projet\n3 : Supprimer un projet");
 
                 bool continuerDemander = true;
                 while (continuerDemander)
@@ -93,18 +93,18 @@ namespace Projet_prog_avancee
                     try
                     {
                         choix = int.Parse(Console.ReadLine());
-                        if (choix == 1 || choix == 2)
+                        if (choix == 1 || choix == 2 || choix == 3)
                         {
                             continuerDemander = false;
                         }
                         else
                         {
-                            Console.WriteLine("Veuillez entrer 1 pour chercher un projet, 2 pour ajouter un projet.");
+                            Console.WriteLine("Veuillez entrer 1 pour chercher un projet, 2 pour ajouter un projet ou 3 pour supprimer un projet.");
                         }
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("Veuillez entrer 1 pour chercher un projet, 2 pour ajouter un projet.");
+                        Console.WriteLine("Veuillez entrer 1 pour chercher un projet, 2 pour ajouter un projet ou 3 pour supprimer un projet.");
                     }
                 }
 
@@ -114,10 +114,37 @@ namespace Projet_prog_avancee
                     RechercheProjet R = new RechercheProjet(_nbProjets, _listeProjets);
                     R.Recherche();
                 }
-                else //Forcément 2 car on a déjà vérifié au préalable que le chiffre était soit 1 soit 2
+                else if (choix == 2)
                 {
                     AjoutProjet A = new AjoutProjet(_nbProjets, _listeProjets);
                     A.AjouterProjet();
+                }
+                else//Forcément 3 car on a déjà vérifié au préalable que le chiffre était soit 1 soit 2 soit 3
+                {
+                    Console.WriteLine("Veuillez entrer le nom du projet à supprimer.");
+                    string _projetSupp = Console.ReadLine();
+                    bool _projetTrouve = false;
+
+                    foreach (Projet P in _listeProjets) //On parcourt tous les projets
+                    {
+                        if (_projetSupp == P._nom.ToLower())
+                        {
+                            _listeProjets.Remove(P);
+                            _projetTrouve = true;
+
+                            string xmlOutput = XML_test.ConvertToXml(_listeProjets);
+
+                            File.WriteAllText("test.xml", xmlOutput);
+                        }
+                    }
+                    if (_projetTrouve)
+                    {
+                        Console.WriteLine("Le projet nommé {0} a bien été supprimé.", _projetSupp);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Le projet nommé {0} est introuvable.", _projetSupp);
+                    }
                 }
 
                 Console.WriteLine("Tapez 1 pour effectuer une nouvelle recherche, un autre chiffre pour quitter l'application.");

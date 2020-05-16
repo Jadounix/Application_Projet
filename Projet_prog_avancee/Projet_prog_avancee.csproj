@@ -58,6 +58,7 @@
     <Compile Include="SiteWeb.cs" />
     <Compile Include="Soutenance.cs" />
     <Compile Include="XML_test.cs" />
+    <Compile Include="SupprimerProjet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
