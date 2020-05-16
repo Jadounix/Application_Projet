@@ -135,6 +135,8 @@ namespace Projet_prog_avancee
                             string xmlOutput = XML_test.ConvertToXml(_listeProjets);
 
                             File.WriteAllText("test.xml", xmlOutput);
+
+                            break;
                         }
                     }
                     if (_projetTrouve)
