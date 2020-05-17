@@ -78,7 +78,7 @@ namespace Projet_prog_avancee
         //Création de livrables pour un projet
         public void CreationLivrables()
         {
-            for(int i = 0; i < alea.Next(0, 3); i++)
+            for(int i = 0; i < alea.Next(0, 2); i++)
             {
                 _listeLivrables.Add(new Soutenance("2 juin",10));
             }

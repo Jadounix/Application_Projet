@@ -4,10 +4,10 @@
 /Users/Fannie/Desktop/Application_Projet/Projet_prog_avancee/obj/Debug/Projet_prog_avancee.csprojAssemblyReference.cache
 /Users/Fannie/Desktop/Application_Projet/Projet_prog_avancee/obj/Debug/Projet_prog_avancee.exe
 /Users/Fannie/Desktop/Application_Projet/Projet_prog_avancee/obj/Debug/Projet_prog_avancee.pdb
-C:/Users/Jade/Documents/GitHub/Application_Projet/Projet_prog_avancee/bin/Debug/Projet_prog_avancee.exe.config
-C:/Users/Jade/Documents/GitHub/Application_Projet/Projet_prog_avancee/bin/Debug/Projet_prog_avancee.exe
-C:/Users/Jade/Documents/GitHub/Application_Projet/Projet_prog_avancee/bin/Debug/Projet_prog_avancee.pdb
-C:/Users/Jade/Documents/GitHub/Application_Projet/Projet_prog_avancee/obj/Debug/Projet_prog_avancee.csproj.CoreCompileInputs.cache
-C:/Users/Jade/Documents/GitHub/Application_Projet/Projet_prog_avancee/obj/Debug/Projet_prog_avancee.exe
-C:/Users/Jade/Documents/GitHub/Application_Projet/Projet_prog_avancee/obj/Debug/Projet_prog_avancee.pdb
-C:/Users/Jade/Documents/GitHub/Application_Projet/Projet_prog_avancee/obj/Debug/Projet_prog_avancee.csprojAssemblyReference.cache
+C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\bin\Debug\Projet_prog_avancee.exe.config
+C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\bin\Debug\Projet_prog_avancee.exe
+C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\bin\Debug\Projet_prog_avancee.pdb
+C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\obj\Debug\Projet_prog_avancee.csprojAssemblyReference.cache
+C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\obj\Debug\Projet_prog_avancee.csproj.CoreCompileInputs.cache
+C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\obj\Debug\Projet_prog_avancee.exe
+C:\Users\Jade\Documents\GitHub\Application_Projet\Projet_prog_avancee\obj\Debug\Projet_prog_avancee.pdb
