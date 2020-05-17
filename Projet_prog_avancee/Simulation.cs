@@ -122,7 +122,7 @@ namespace Projet_prog_avancee
                 else//Forcément 3 car on a déjà vérifié au préalable que le chiffre était soit 1 soit 2 soit 3
                 {
                     Console.WriteLine("Veuillez entrer le nom du projet à supprimer.");
-                    string _projetSupp = Console.ReadLine();
+                    string _projetSupp = Console.ReadLine().ToLower();
                     bool _projetTrouve = false;
 
                     foreach (Projet P in _listeProjets) //On parcourt tous les projets
