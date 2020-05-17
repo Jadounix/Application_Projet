@@ -9,72 +9,9 @@ using System.Xml.Serialization;
 // https://docs.microsoft.com/fr-fr/dotnet/api/system.xml.serialization.xmlserializer?view=netcore-3.1
 // https://docs.microsoft.com/fr-fr/dotnet/api/system.xml.serialization.xmlserializer.deserialize?view=netcore-3.1
 
-// création d'une classe
-public class Objet
-{
-    public string Attribut1 { get; set; }
-    public string Attribut2 { get; set; }
-
-    private string Attribut3 { get; set; }
-    private int Attribut4;
-
-    public Objet()
-    {
-        Attribut1 = "Projet";
-        Attribut2 = "Intervenant";
-        Attribut3 = "bonsoir";
-        Attribut4 = 15;
-    }
-}
 
 public class XML_test
 {
-    public static void Test1()
-    {
-        // on crée un objet
-        var projetTest1 = new Objet();
-        var projetTest2 = new Objet();
-        var projetTest3 = new Objet();
-
-        List<Objet> maListe = new List<Objet>() { projetTest1, projetTest2, projetTest3 };
-
-        // on le transforme en xml
-        string xmlOutput = XML_test.ConvertToXml(maListe);
-
-        // On écrit dans un fichier
-        File.WriteAllText("test.xml", xmlOutput);
-
-
-
-        // on récupère ce qui est écrit dans le fichier
-        string xmlInput = File.ReadAllText("test.xml");
-
-        // on "déserialize" le contenu du fichier
-        List<Objet> fdtqf = ConvertFromXml<List<Objet>>(xmlInput);
-    }
-
-    public static void Test2(string filename)
-    {
-        XmlSerializer ser = new XmlSerializer(typeof(DataSet));
-
-        // on créé un DataSet; ajout de table, colonne, et dix lignes.
-        DataSet ds = new DataSet("myDataSet");
-        DataTable t = new DataTable("table1");
-        DataColumn c = new DataColumn("thing");
-        t.Columns.Add(c);
-        ds.Tables.Add(t);
-        DataRow r;
-        for (int i = 0; i < 10; i++)
-        {
-            r = t.NewRow();
-            r[0] = "Thing " + i;
-            t.Rows.Add(r);
-        }
-        TextWriter writer = new StreamWriter(filename);
-        ser.Serialize(writer, ds);
-        writer.Close();
-    }
-
     // https://stackoverflow.com/a/2670205
     public static T ConvertFromXml<T>(string xml)
     {
