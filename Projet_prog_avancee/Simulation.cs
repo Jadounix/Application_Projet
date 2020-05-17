@@ -48,17 +48,13 @@ namespace Projet_prog_avancee
             for (int k = 0; k < _nbProjets; k++)
             {
                 _listeProjets.Add(new Projet(nbIntervenant, nbJours, annee, nomProjets[noNomProjet], _typeProjets[noTypeProjet]));
+
                 //On relance tous les nombre aléatoires
                 nbIntervenant = alea.Next(4, 10);
                 nbJours = alea.Next(1, 300);
                 annee = alea.Next(2009, 2022);
                 noTypeProjet = alea.Next(_typeProjets.Count);
                 noNomProjet = alea.Next(nomProjets.Count);
-            }
-
-            foreach(Projet p in _listeProjets)
-            {
-                Console.WriteLine(p.ToString());
             }
         }
 
@@ -71,12 +67,6 @@ namespace Projet_prog_avancee
 
             // on "déserialize" le contenu du fichier
             _listeProjets = XML_test.ConvertFromXml<List<Projet>>(xmlInput);
-
-            // on affiche tous les projets
-            foreach (Projet p in _listeProjets)
-            {
-                Console.WriteLine(p.ToString());
-            }
 
             // lancement
             int choix = 0;
